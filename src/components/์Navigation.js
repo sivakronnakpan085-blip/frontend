@@ -25,7 +25,7 @@ export default function Navigation() {
     { name: 'หน้าแรก', href: '/' },
     { name: 'เกี่ยวกับเรา', href: '/about' },
     { name: 'บริการของเรา', href: '/service' },
-    { name: 'ติดต่อเรา', href: '/contact' },
+    { name: 'ติดต่อเรา', href: '/contract' },
   ]
 
   // 🛠️ กำหนดตัวแปรสำหรับควบคุมสีข้อความ เพื่อไม่ให้โค้ดยาวเกินไป

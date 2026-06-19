@@ -62,8 +62,8 @@ export default function Herosection() {
               {/* Image Card */}
               <div className="relative overflow-hidden rounded-[32px] border border-yellow-500/20 bg-zinc-900/50 backdrop-blur-xl">
                 <img
-                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900"
-                  alt="Technology"
+                  src="https://png.pngtree.com/thumb_back/fh260/background/20220502/pngtree-fried-pieces-of-pork-rind-and-fat-pan-fried-fat-crispy-photo-image_24295490.jpg"
+                  alt="กากหมู"
                   className="h-full w-full max-w-xl object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
@@ -73,11 +73,11 @@ export default function Herosection() {
                 {/* Floating Card */}
                 <div className="absolute bottom-6 left-6 rounded-2xl border border-yellow-500/20 bg-black/70 px-5 py-4 backdrop-blur-xl">
                   <p className="text-sm text-gray-400">
-                    Digital Innovation
+                    กากหมู 
                   </p>
 
                   <h3 className="mt-1 text-xl font-bold text-yellow-400">
-                    Next Generation
+                    หอมๆ
                   </h3>
                 </div>
               </div>
@@ -87,6 +87,7 @@ export default function Herosection() {
 
         </div>
       </div>
+      
     </section>
   );
 }
