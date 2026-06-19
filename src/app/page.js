@@ -1,12 +1,13 @@
-import Link from 'next/link'
-
+import React from 'react'
+import Herosection from '@/components/Herosection'
+import Cardsection from '@/components/Cardsection'
+import Footersection from '@/components/Footer'
 export default function Home() {
   return (
     <div>
-      <center><Link href="/Home">Home</Link> | <Link href="/about">About</Link> | <Link href="/Service">Service</Link> | <Link href="/contract">Contract</Link></center>
-      
-      <center> Home page</center>
-    
+    <Herosection />
+    <Cardsection />
+    <Footersection />
     </div>
-  );
+  )
 }

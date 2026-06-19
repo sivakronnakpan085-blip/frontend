@@ -7,12 +7,10 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   const menuItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Service', href: '/Service' },
-    { name: 'Contact', href: '/contract' },
-    { name: 'Sign In', href: '/login' },
-    { name: 'Sign Up', href: '/register' }
+    { name: 'หน้าแรก', href: '/' },
+    { name: 'เกี่ยวกับเรา', href: '/about' },
+    { name: 'บริการของเรา', href: '/Service' },
+    { name: 'ติดต่อเรา', href: '/contract' },
   ]
 
   return (
@@ -25,59 +23,87 @@ export default function Navigation() {
             href="/"
             className="flex items-center gap-3"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-bold shadow-md">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-bold shadow-md ">
               M
             </div>
 
             <div>
               <h1 className="text-lg font-bold text-gray-900">
-                My Website
+                NextShop
               </h1>
               <p className="text-xs text-gray-500">
-                Next.js + Tailwind
+                Online E-Commerce
               </p>
             </div>
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="relative text-gray-700 transition-all duration-300 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden rounded-lg p-2 text-gray-700 transition hover:bg-gray-100"
-          >
-            <div className="space-y-1.5">
-              <span
-                className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
-                  isOpen ? 'translate-y-2 rotate-45' : ''
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
-                  isOpen ? 'opacity-0' : ''
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
-                  isOpen ? '-translate-y-2 -rotate-45' : ''
-                }`}
-              />
+          {/* Right Section: Menu, Cart, Login, Mobile Toggle */}
+          <div className="flex items-center gap-4 md:gap-6">
+           
+            {/* Desktop Menu Items */}
+            <div className="hidden md:flex items-center gap-8">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="relative text-gray-700 transition-all duration-300 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  {item.name}
+                </Link>
+              ))}
             </div>
-          </button>
+
+            {/* Cart Button (Always Visible) */}
+            <Link
+              href="/cart"
+              className="relative p-2 text-gray-700 transition-colors hover:text-blue-600"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+              {/* Cart Badge */}
+              <span className="absolute top-0 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white">
+                3
+              </span>
+            </Link>
+
+            {/* Login Button (Desktop) */}
+            <div className="hidden md:block">
+              <Link
+                href="/login"
+                className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
+              >
+                ล๊อกอิน
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden rounded-lg p-2 text-gray-700 transition hover:bg-gray-100"
+            >
+              <div className="space-y-1.5">
+                <span
+                  className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
+                    isOpen ? 'translate-y-2 rotate-45' : ''
+                  }`}
+                />
+                <span
+                  className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
+                    isOpen ? 'opacity-0' : ''
+                  }`}
+                />
+                <span
+                  className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
+                    isOpen ? '-translate-y-2 -rotate-45' : ''
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Dropdown */}
         <div
           className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
             isOpen ? 'max-h-96 opacity-100 py-4' : 'max-h-0 opacity-0'
@@ -94,6 +120,15 @@ export default function Navigation() {
                 {item.name}
               </Link>
             ))}
+           
+            {/* Login Button (Mobile) */}
+            <Link
+              href="/login"
+              onClick={() => setIsOpen(false)}
+              className="mt-2 rounded-lg bg-blue-600 px-4 py-3 text-center font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
+            >
+              ล๊อกอิน
+            </Link>
           </div>
         </div>
       </div>
