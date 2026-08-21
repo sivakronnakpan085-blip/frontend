@@ -1,6 +1,5 @@
 import { Geist, Prompt } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/์Navigation"
+import "../globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +24,6 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${prompt.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar />
         {children}
       </body>
     </html>
